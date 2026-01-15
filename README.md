@@ -1,4 +1,4 @@
-# Data Privacy Package
+# Privacy Preserving Cloud
 
 This is a simple implementation of a privacy-preserving Cloud Storage Service using a Group Signature (GS) scheme that takes inspiration from the uploaded paper titled "Privacy-preserving security solution for cloud services" by L. Malina et al.
 
