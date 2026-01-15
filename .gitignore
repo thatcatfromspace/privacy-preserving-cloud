@@ -1,0 +1,9 @@
+# == general ==
+*.log
+storage/
+build/
+*.cache/
+
+# == application specific ==
+gpk.dat
+demo.sh
