@@ -6,7 +6,7 @@ The implementation is a simple HTTP server that provides a REST API for file upl
 
 The current implementation takes several assumptions and simplifications to make the implementation simple and easy to understand. These assumptions are:
 
-- RSA is used to generate group signatures and SHA is used verify signatures.
+- RSA-2048 is used to generate group signatures and SHA256 is used verify signatures.
 - The group manager is the only one who can revoke users.
 
 
