@@ -26,6 +26,20 @@ int main() {
 
   httplib::Server svr;
 
+  svr.set_post_routing_handler([](const auto& req, auto& res) {
+    res.set_header("Access-Control-Allow-Origin", "*");
+    res.set_header("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+    res.set_header("Access-Control-Allow-Headers", "*");
+  });
+
+  svr.Options(R"(/.*)", [](const auto& req, auto& res) {
+    res.status = 200;
+  });
+
+  svr.Get("/health", [](const auto& req, auto& res) {
+    res.set_content("OK", "text/plain");
+  });
+
   svr.Post("/join", [](const httplib::Request &req, httplib::Response &res) {
     std::string userId = req.body; 
     if (userId.empty()) {
